@@ -1235,3 +1235,57 @@ function startSpecificQuiz(topic, difficulty) {
     // Display first question
     displayQuestion();
 }
+
+// Update showResults function to include dynamic graphics
+function showResults() {
+    // Update results
+    finalScore.textContent = currentQuiz.score;
+    maxScore.textContent = currentQuiz.questions.length;
+    
+    // Set results message and graphic based on score
+    const percentage = (currentQuiz.score / currentQuiz.questions.length) * 100;
+    const resultsGraphic = document.getElementById('results-graphic');
+    
+    if (percentage >= 90) {
+        resultsMessage.textContent = "Excellent! You're a quiz master!";
+        resultsGraphic.innerHTML = '<div class="trophy-icon">🏆</div>';
+    } else if (percentage >= 70) {
+        resultsMessage.textContent = "Great job! You know your stuff!";
+        resultsGraphic.innerHTML = '<div class="clap-icon">👏</div>';
+    } else if (percentage >= 50) {
+        resultsMessage.textContent = "Good effort! Keep learning!";
+        resultsGraphic.innerHTML = '<div class="lightbulb-icon">💡</div>';
+    } else {
+        resultsMessage.textContent = "Keep practicing to improve!";
+        resultsGraphic.innerHTML = '<div class="growth-icon">🌱</div>';
+    }
+    
+    // Rest of the showResults function remains the same...
+    // Show answer review
+    answersReview.innerHTML = '';
+    currentQuiz.questions.forEach((question, index) => {
+        const userAnswerIndex = currentQuiz.userAnswers[index];
+        const isCorrect = userAnswerIndex === question.correct;
+        const isUnanswered = userAnswerIndex === -1;
+        
+        const reviewElement = document.createElement('div');
+        reviewElement.className = `answer-review ${isCorrect ? 'correct' : 'incorrect'}`;
+        
+        let userAnswerText = 'Not answered';
+        if (!isUnanswered) {
+            userAnswerText = question.options[userAnswerIndex];
+        }
+        
+        reviewElement.innerHTML = `
+            <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+            <p>Your answer: ${userAnswerText}</p>
+            ${!isCorrect ? `<p class="correct-answer">Correct answer: ${question.options[question.correct]}</p>` : ''}
+        `;
+        
+        answersReview.appendChild(reviewElement);
+    });
+    
+    // Switch screens
+    quizScreen.classList.remove('active');
+    resultsScreen.classList.add('active');
+}
