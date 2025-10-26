@@ -763,3 +763,244 @@ footer a:hover {
     color: #6c757d;
     line-height: 1.6;
 }
+
+/* Hero Section with Image */
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.quiz-illustration {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brain-icon, .question-marks, .trophy-icon {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.brain-icon {
+    top: 20px;
+    left: 50px;
+    animation-delay: 0s;
+}
+
+.question-marks {
+    top: 80px;
+    right: 60px;
+    animation-delay: 1s;
+    font-size: 2rem;
+}
+
+.trophy-icon {
+    bottom: 30px;
+    left: 80px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Topic Icons */
+.topic-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* About Page Visual */
+.about-hero {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-visual {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.learning-illustration {
+    position: relative;
+    height: 150px;
+}
+
+.book-icon, .lightbulb-icon, .growth-icon {
+    position: absolute;
+    font-size: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.book-icon {
+    top: 20px;
+    left: 30px;
+    animation-delay: 0s;
+}
+
+.lightbulb-icon {
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0.5s;
+}
+
+.growth-icon {
+    bottom: 20px;
+    right: 30px;
+    animation-delay: 1s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Quiz Popup Visual */
+.popup-visual {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-ready-illustration {
+    position: relative;
+    height: 100px;
+}
+
+.quiz-ready-illustration .brain-icon {
+    position: static;
+    font-size: 4rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.sparkles {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 1.5rem;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Results Graphics */
+.score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.results-graphic {
+    font-size: 4rem;
+    animation: celebrate 2s ease-in-out;
+}
+
+@keyframes celebrate {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Contact Page Visual */
+.contact-visual {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.communication-illustration {
+    position: relative;
+    height: 120px;
+}
+
+.message-icon, .mail-icon {
+    position: absolute;
+    font-size: 3rem;
+    animation: slide 3s ease-in-out infinite;
+}
+
+.message-icon {
+    top: 20px;
+    left: 40px;
+    animation-delay: 0s;
+}
+
+.mail-icon {
+    bottom: 20px;
+    right: 40px;
+    animation-delay: 1.5s;
+}
+
+@keyframes slide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+/* Responsive Design for Images */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .score-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .brain-icon, .question-marks, .trophy-icon {
+        position: static;
+        margin: 0.5rem;
+    }
+    
+    .quiz-illustration {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
