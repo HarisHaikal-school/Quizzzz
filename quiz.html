@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz - Quizzzz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Quizzzz</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="topics.html">Quiz Topics</a></li>
+                    <li><a href="quiz.html" class="active">Take Quiz</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <div class="container">
+                <!-- Start Quiz Popup -->
+                <div id="start-quiz-popup" class="quiz-popup active">
+                    <div class="section-box">
+                        <h2>Ready for a Quiz Challenge?</h2>
+                        <p>Test your knowledge with a randomly selected topic at Easy difficulty!</p>
+                        <button id="start-quiz-btn" class="btn">Take a Quiz</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Screen -->
+                <div id="quiz-screen" class="quiz-screen">
+                    <div class="quiz-header">
+                        <div class="quiz-info">
+                            <h2 id="quiz-title">Science Quiz</h2>
+                            <p id="quiz-difficulty">Easy Level</p>
+                        </div>
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <p>Question <span id="current-question">1</span> of <span id="total-questions">10</span></p>
+                        </div>
+                        <div class="quiz-timer">
+                            <div class="timer-circle">
+                                <svg class="timer-svg" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" class="timer-bg"></circle>
+                                    <circle cx="50" cy="50" r="45" class="timer-progress" id="timer-progress"></circle>
+                                </svg>
+                                <span id="timer-text">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-container">
+                        <h3 id="question-text">What is the capital of France?</h3>
+                        <div class="options-container" id="options-container">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button id="next-btn" class="btn btn-secondary" style="display: none;">Next Question</button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div id="results-screen" class="quiz-screen">
+                    <div class="section-box">
+                        <h2>Quiz Complete!</h2>
+                        
+                        <div class="results-summary">
+                            <div class="score-circle">
+                                <span id="final-score">7</span>/<span id="max-score">10</span>
+                            </div>
+                            <p id="results-message">Well done! You have good knowledge in this area.</p>
+                        </div>
+                        
+                        <div class="results-details">
+                            <h3>Review Your Answers</h3>
+                            <div id="answers-review">
+                                <!-- Answer review will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="results-actions">
+                            <button id="retry-btn" class="btn">Retry This Quiz</button>
+                            <button id="new-quiz-btn" class="btn btn-secondary">Try Another Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Quizzzz. All rights reserved.</p>
+            <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
