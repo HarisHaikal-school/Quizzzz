@@ -28,6 +28,12 @@
                 <!-- Start Quiz Popup -->
                 <div id="start-quiz-popup" class="quiz-popup active">
                     <div class="section-box">
+                        <div class="popup-visual">
+                            <div class="quiz-ready-illustration">
+                                <div class="brain-icon">🧠</div>
+                                <div class="sparkles">✨</div>
+                            </div>
+                        </div>
                         <h2>Ready for a Quiz Challenge?</h2>
                         <p>Test your knowledge with a randomly selected topic at Easy difficulty!</p>
                         <button id="start-quiz-btn" class="btn">Take a Quiz</button>
@@ -76,8 +82,14 @@
                         <h2>Quiz Complete!</h2>
                         
                         <div class="results-summary">
-                            <div class="score-circle">
-                                <span id="final-score">7</span>/<span id="max-score">10</span>
+                            <div class="score-display">
+                                <div class="score-circle">
+                                    <span id="final-score">7</span>/<span id="max-score">10</span>
+                                </div>
+                                <div class="results-graphic" id="results-graphic">
+                                    <!-- Graphic will be set based on score -->
+                                    <div class="trophy-icon">🏆</div>
+                                </div>
                             </div>
                             <p id="results-message">Well done! You have good knowledge in this area.</p>
                         </div>
