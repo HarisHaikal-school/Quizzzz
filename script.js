@@ -901,7 +901,7 @@ let currentQuiz = {
     score: 0,
     userAnswers: [],
     timer: null,
-    timeLeft: 30
+    timeLeft: 60
 };
 
 // DOM elements
@@ -964,7 +964,7 @@ function startSpecificQuiz(topic, difficulty) {
         score: 0,
         userAnswers: [],
         timer: null,
-        timeLeft: 30
+        timeLeft: 60
     };
     
     // Update UI
@@ -1025,7 +1025,7 @@ function displayQuestion() {
 // Start timer for current question
 function startTimer() {
     // Reset timer
-    currentQuiz.timeLeft = 30;
+    currentQuiz.timeLeft = 60;
     timerText.textContent = currentQuiz.timeLeft;
     timerText.classList.remove('timer-warning');
     
@@ -1217,7 +1217,7 @@ function startSpecificQuiz(topic, difficulty) {
         score: 0,
         userAnswers: [],
         timer: null,
-        timeLeft: 30
+        timeLeft: 60
     };
     
     // Update UI
